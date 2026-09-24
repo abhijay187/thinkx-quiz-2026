@@ -1,0 +1,145 @@
+/**
+ * THINKX QUIZ 2026 - Presentation Motion System
+ * Strictly smooth, elegant, high-contrast transitions.
+ * Zero glitch, zero jitter, zero shake, zero RGB split, zero popping.
+ */
+
+/* Content Container Smooth Fade & Upward Drift (500–700ms) */
+@keyframes slideContentEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideContentExit {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.995);
+  }
+}
+
+/* Question Header Fade & Rise */
+@keyframes questionFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle Scale for Question Number Badge */
+@keyframes badgeScaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Staggered Option Cards */
+@keyframes optionStaggerIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Image Reveal with Soft Cyan Halo */
+@keyframes imageReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.985);
+    box-shadow: 0 0 0 rgba(0, 240, 255, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7), 0 0 24px rgba(0, 240, 255, 0.12);
+  }
+}
+
+/* Rules List Staggered Entry */
+@keyframes ruleItemIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulsing HUD Beacon (Extremely subtle ambient indicator) */
+@keyframes hudGlowPulse {
+  0%, 100% {
+    opacity: 0.6;
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 14px rgba(0, 240, 255, 0.65);
+  }
+}
+
+/* Active Classes with 'both' fill-mode */
+.slide-entering {
+  animation: slideContentEnter 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.slide-exiting {
+  animation: slideContentExit 200ms ease-out both;
+}
+
+.anim-badge {
+  animation: badgeScaleIn 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-title {
+  animation: questionFadeIn 550ms cubic-bezier(0.16, 1, 0.3, 1) 60ms both;
+}
+
+.anim-image {
+  animation: imageReveal 600ms cubic-bezier(0.16, 1, 0.3, 1) 120ms both;
+}
+
+/* Staggered Delay Utilities for Options (80ms intervals, completes in under 680ms) */
+.anim-option-1 {
+  animation: optionStaggerIn 380ms cubic-bezier(0.16, 1, 0.3, 1) 40ms both;
+}
+
+.anim-option-2 {
+  animation: optionStaggerIn 380ms cubic-bezier(0.16, 1, 0.3, 1) 120ms both;
+}
+
+.anim-option-3 {
+  animation: optionStaggerIn 380ms cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+}
+
+.anim-option-4 {
+  animation: optionStaggerIn 380ms cubic-bezier(0.16, 1, 0.3, 1) 280ms both;
+}
+
+/* Rules Stagger */
+.anim-rule {
+  animation: ruleItemIn 400ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
